@@ -1,0 +1,196 @@
+:root {
+  --EmotesNumber: 0;
+  --EmotesSteps: 1;
+}
+
+* {
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.contaner_emotes {
+  display: flex;
+  gap: 10px;
+}
+
+.emotes_cat {
+  background-image: url('../Assets/Sprout Lands - Sprites - Basic pack/UI/Sprite sheets/Dialouge UI/Emotes/Teemo Basic emote animations sprite sheet.png');
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  transform: scale(1.5);
+  background-position: 0 calc(var(--EmotesNumber)*-32px);
+  animation: playEmote 1s steps(var(--EmotesSteps)) infinite;
+}
+
+@keyframes playEmote {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: calc(var(--EmotesSteps)*-32px);
+    /* 8 frames * 32px = 256px */
+  }
+}
+
+.message_emotes {
+  background-image: url("../Assets/Sprout Lands - Sprites - Basic pack/UI/Sprite sheets/Dialouge UI/dialog box big.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 60px;
+  width: 230px;
+  transform: translate(0, -40px);
+  text-align-last: center;
+  margin-bottom: -30px;
+  height: 60px;
+
+}
+
+.message_emotes p {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  font-size: 0.5em;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+.current-player {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 10;
+  background-image: url('../Assets/character/walk-front.png');
+  background-size: var(--sprite-sheet-width) auto;
+  image-rendering: pixelated;
+}
+
+@keyframes animaplayer {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: calc(-1 * var(--sprite-sheet-width));
+  }
+}
+
+.current-player.right {
+  background-image: url('../Assets/character/walk-right.png');
+  animation: animaplayer 0.5s steps(4) infinite;
+}
+
+.current-player.left {
+  background-image: url('../Assets/character/walk-left.png');
+  animation: animaplayer 0.5s steps(4) infinite;
+}
+
+.current-player.top {
+  background-image: url('../Assets/character/walk-back.png');
+  animation: animaplayer 0.5s steps(4) infinite;
+}
+
+.current-player.down {
+  background-image: url('../Assets/character/walk-front.png');
+  animation: animaplayer 0.5s steps(4) infinite;
+}
+
+.current-player.idle-right {
+  background-image: url('../Assets/character/walk-right.png');
+}
+
+.current-player.idle-left {
+  background-image: url('../Assets/character/walk-left.png');
+
+}
+
+.current-player.idle-top {
+  background-image: url('../Assets/character/walk-back.png');
+}
+
+.current-player.idle-down {
+  background-image: url('../Assets/character/walk-front.png');
+}
+
+/* Default idle state */
+.current-player.idle {
+  background-image: url('../Assets/character/walk-front.png');
+  animation: none;
+}
+
+.name_up_player {
+  transform: translate(0, -20px);
+  background-color: oldlace;
+  text-align: center;
+  border-radius: 19px;
+  font-size: 1vw;
+  padding: 1px 5px;
+}
+
+.bomb {
+  top: 0;
+  left: 0;
+  background-image: url('../Assets/bomb/dynamite-pack.png');
+  image-rendering: pixelated;
+  background-size: var(--bomb-sheet-width) auto;
+  position: absolute;
+  animation: animaBomb 1s steps(3) infinite;
+}
+
+@keyframes animaBomb {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: calc(-1 * var(--bomb-sheet-width));
+  }
+}
+
+.explosion {
+  top: 0;
+  left: 0;
+  background-image: url('../Assets/bomb/explosion_1row.png');
+  image-rendering: pixelated;
+  background-size: var(--bomb-sheet-width) auto;
+  position: absolute;
+  animation: animaExplosion 1s steps(6) forwards;
+}
+
+@keyframes animaExplosion {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: calc(-1 * var(--bomb-sheet-width));
+  }
+}
+
+/* new edit */
+.chat-input[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+}
+
+.disabled-input {
+  opacity: 0.7;
+  pointer-events: none;
+}
