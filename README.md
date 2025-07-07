@@ -108,19 +108,19 @@ This project emphasizes **performance**, ensuring smooth animations and responsi
 ## 📸 Screenshots
 
 ### 👥 Waiting Room
-![Waiting Room](./assets/readme/waitingPage.png)
+![Waiting Room](./client/Assets/readme/waitingPage.png)
 
 ### 🎮 Gameplay
-![Gameplay](./assets/readme/gamePlay.png)
+![Gameplay](./client/Assets/readme/gamePlay.png)
 
 ### 💣 Bombing Action
-![Bombing](./assets/readme/bombing.png)
+![Bombing](./client/Assets/readme/bombing.png)
 
 ### 🔥 Explosion Effect
-![Fire Effect](./assets/readme/fireEffect.png)
+![Fire Effect](./client/Assets/readme/fireEffect.png)
 
 ### 🏆 Win Screen
-![Victory](./assets/readme/win.png)
+![Victory](./client/Assets/readme/win.png)
 ---
 
 ## 🧪 How to Run Locally
